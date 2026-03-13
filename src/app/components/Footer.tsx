@@ -31,8 +31,8 @@ export function Footer() {
               }}
             >
               <Heart size={16} className="text-[#c0576f] fill-[#c0576f]" />
+              Figma | Tailwind | React
             </motion.div>
-            pasión
           </div>
         </motion.div>
       </div>
