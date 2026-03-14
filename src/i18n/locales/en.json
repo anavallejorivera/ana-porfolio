@@ -75,6 +75,32 @@
     "email": "Email",
     "linkedin": "LinkedIn"
   },
+  "projectsDetails": {
+    "appExamenes": {
+      "title": "Exam Prep App - Study Platform for Students",
+      "description": "An interactive quiz application for vocational students with multiple-choice questions, progress tracking, and 15 programming units.",
+      "overview": "A modern and interactive web platform designed to help Development Applications students prepare for their exams. The application allows users to select from different subjects (English, Business Management and Planning, and Programming) and take tests with automatic progress tracking. This was my first project using React and Tailwind CSS, focused on practicing importing and using external libraries.",
+      "problem": "As a vocational student, I needed a practical tool to prepare for my exams in an interactive way. A simple text document wasn't enough - I needed an application that could track my progress, show me my mistakes, and keep me motivated. Additionally, I wanted to create a real project to apply my React and Tailwind CSS knowledge.",
+      "problemQuestions": [
+        "How can I practice exams in an organized way?",
+        "How to track my progress across different subjects?",
+        "How to get immediate feedback on my answers?",
+        "How can I build a real React project?"
+      ],
+      "goals": [
+        "Create an intuitive interface for selecting and taking tests",
+        "Implement a progress and results tracking system",
+        "Offer immediate feedback on correct and incorrect answers",
+        "Support multiple subjects with various thematic units",
+        "Practice integrating external libraries in React",
+        "Apply Tailwind CSS for modern, clean, and responsive design"
+      ],
+      "design": "The design was iterative and student-centered. I created a clear flow: home > select subject > select unit > take test > view results. I designed expandable cards for each subject with clear access buttons. The interface is clean and motivating, with visual progress indicators. I used subtle colors that don't cause eye strain during studying. Smooth transitions make navigation pleasant.",
+      "development": "Built entirely with React using reusable components and custom hooks. Tailwind CSS provided utility styles and ensured responsive design across all devices. Implemented React Router for navigation between sections. Used useState and useEffect to manage the state of answers and result calculations. Questions are structured in JSON for scalability. Added localStorage for persistence of user progress between sessions.",
+      "result": "The application successfully launched with 3 main subjects and 15 complete units in Programming. It's a functional tool that works perfectly on mobile, tablet, and desktop. The project demonstrated key concepts: React componentization, state management, responsive design with Tailwind, and good UX practices. I continue improving the application with new questions and features based on feedback. It's an important achievement as my first serious React project.",
+      "technologies": ["React", "Tailwind CSS", "JavaScript", "External Libraries", "Responsive Design"]
+    }
+  },
   "footer": {
     "allRightsReserved": "All rights reserved.",
     "designedBuilt": "Designed and built by Ana Vallejo"
