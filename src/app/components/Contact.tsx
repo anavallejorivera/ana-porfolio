@@ -203,7 +203,7 @@ export function Contact() {
                 disabled={submitted}
                 whileHover={{ scale: submitted ? 1 : 1.02 }}
                 whileTap={{ scale: submitted ? 1 : 0.98 }}
-                className="w-full px-8 py-4 bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors disabled:bg-green-500 dark:disabled:bg-green-600 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-1/2 mx-auto px-8 py-4 bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors disabled:bg-green-500 dark:disabled:bg-green-600 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {submitted ? (
                   <>{t('contact.successMessage')}</>

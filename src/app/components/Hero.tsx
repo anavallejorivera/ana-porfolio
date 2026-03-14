@@ -114,7 +114,7 @@ export function Hero() {
                 boxShadow: '0 10px 40px -10px rgba(126, 47, 86, 0.4)'
               }}
               whileTap={{ scale: 0.95 }}
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#7e2f56] text-white rounded-lg hover:bg-[#c0576f] transition-all"
+              className="group inline-flex items-center justify-center gap-2 w-1/2 mx-auto px-8 py-4 bg-[#7e2f56] text-white rounded-lg hover:bg-[#c0576f] transition-all"
             >
               {t('hero.downloadCV')}
               <motion.div

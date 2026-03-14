@@ -226,7 +226,7 @@ export function CaseStudy() {
         <section className="text-center pt-8 border-t border-gray-200">
           <Link 
             to="/#projects"
-            className="inline-flex items-center gap-2 px-8 py-4 w-full bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors disabled:bg-green-500 dark:disabled:bg-green-600 disabled:cursor-not-allowed justify-center"
+            className="inline-flex items-center gap-2 px-8 py-4 w-1/2 mx-auto bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors disabled:bg-green-500 dark:disabled:bg-green-600 disabled:cursor-not-allowed justify-center"
           >
             Ver más proyectos
             <ExternalLink size={20} />

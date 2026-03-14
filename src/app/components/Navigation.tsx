@@ -131,7 +131,7 @@ export function Navigation() {
                 </button>
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="px-4 py-1.5 text-sm bg-[#c0576f] dark:bg-[#e48679] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors text-center"
+                  className="w-1/2 mx-auto px-4 py-1.5 text-sm bg-[#c0576f] dark:bg-[#e48679] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors text-center"
                 >
                   {t('nav.contact')}
                 </button>
