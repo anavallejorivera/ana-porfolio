@@ -20,13 +20,27 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validación de campos
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setError('Por favor completa todos los campos');
+      return;
+    }
+
     setLoading(true);
     setError('');
 
     try {
-      await emailjs.send(
-        'service_idpj4y7',      // Service ID de EmailJS
-        'template_prfwcbm',      // Plantilla ID de EmailJS
+      console.log('Enviando mensaje con datos:', {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'avallejorivera360@gmail.com'
+      });
+
+      const response = await emailjs.send(
+        'service_idpj4y7',
+        'template_prfwcbm',
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -35,14 +49,17 @@ export function Contact() {
         }
       );
 
+      console.log('Respuesta de EmailJS:', response);
+
       setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => {
         setSubmitted(false);
       }, 3000);
-    } catch (err) {
-      setError(t('contact.errorMessage') || 'Error al enviar el mensaje');
-      console.error('EmailJS error:', err);
+    } catch (err: any) {
+      console.error('Error completo:', err);
+      const errorMessage = err?.text || err?.message || 'Error al enviar el mensaje';
+      setError(`Error: ${errorMessage}`);
     } finally {
       setLoading(false);
     }
