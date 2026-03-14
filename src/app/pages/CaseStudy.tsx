@@ -1,10 +1,12 @@
 import { useParams, Link, Navigate } from 'react-router';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { projects } from '../data/projects';
 import { Footer } from '../components/Footer';
 
 export function CaseStudy() {
   const { projectId } = useParams();
+  const { t } = useTranslation();
   const project = projects.find(p => p.id === projectId);
 
   if (!project) {
@@ -20,7 +22,7 @@ export function CaseStudy() {
           className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
         >
           <ArrowLeft size={20} />
-          Volver a Proyectos
+          {t('caseStudy.backButton')}
         </Link>
       </div>
 
@@ -60,7 +62,7 @@ export function CaseStudy() {
         {/* Overview */}
         <section className="mb-16">
           <h2 className="text-3xl tracking-tight mb-6 dark:text-white">
-            Project Overview
+            {t('caseStudy.overview')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             {project.overview}
@@ -70,7 +72,7 @@ export function CaseStudy() {
         {/* Problem */}
         <section className="mb-16 p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl">
           <h2 className="text-3xl tracking-tight mb-6 dark:text-white">
-            The Problem
+            {t('caseStudy.problem')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
             {project.problem}
@@ -96,7 +98,7 @@ export function CaseStudy() {
         {/* Goals */}
         <section className="mb-16">
           <h2 className="text-3xl tracking-tight mb-6 dark:text-white">
-            Project Goals
+            {t('caseStudy.goals')}
           </h2>
           <ul className="space-y-4">
             {project.goals.map((goal, index) => (
@@ -115,7 +117,7 @@ export function CaseStudy() {
         {/* Design Process */}
         <section className="mb-16">
           <h2 className="text-3xl tracking-tight mb-6 dark:text-white">
-            Design Process
+            {t('caseStudy.designProcess')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             {project.designProcess}
@@ -125,7 +127,7 @@ export function CaseStudy() {
         {/* Development */}
         <section className="mb-16">
           <h2 className="text-3xl tracking-tight mb-6 dark:text-white">
-            Development
+            {t('caseStudy.development')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             {project.development}
@@ -215,7 +217,7 @@ export function CaseStudy() {
         {/* Result */}
         <section className="mb-16 p-8 bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-2xl">
           <h2 className="text-3xl tracking-tight mb-6">
-            Final Result
+            {t('caseStudy.result')}
           </h2>
           <p className="text-lg leading-relaxed opacity-95">
             {project.result}
@@ -228,7 +230,7 @@ export function CaseStudy() {
             to="/#projects"
             className="inline-flex items-center gap-2 px-8 py-4 w-1/2 mx-auto bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors disabled:bg-green-500 dark:disabled:bg-green-600 disabled:cursor-not-allowed justify-center"
           >
-            Ver más proyectos
+            {t('caseStudy.viewMoreProjects')}
             <ExternalLink size={20} />
           </Link>
         </section>

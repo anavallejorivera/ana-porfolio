@@ -75,6 +75,16 @@
     "email": "Email",
     "linkedin": "LinkedIn"
   },
+  "caseStudy": {
+    "backButton": "Back to Projects",
+    "overview": "Project Overview",
+    "problem": "The Problem",
+    "goals": "Project Goals",
+    "designProcess": "Design Process",
+    "development": "Development",
+    "result": "Final Result",
+    "viewMoreProjects": "View More Projects"
+  },
   "projectsDetails": {
     "appExamenes": {
       "title": "Exam Prep App - Study Platform for Students",

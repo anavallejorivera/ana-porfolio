@@ -75,6 +75,16 @@
     "email": "Correo Electrónico",
     "linkedin": "LinkedIn"
   },
+  "caseStudy": {
+    "backButton": "Volver a Proyectos",
+    "overview": "Descripción General del Proyecto",
+    "problem": "El Problema",
+    "goals": "Objetivos del Proyecto",
+    "designProcess": "Proceso de Diseño",
+    "development": "Desarrollo",
+    "result": "Resultado Final",
+    "viewMoreProjects": "Ver más proyectos"
+  },
   "projectsDetails": {
     "appExamenes": {
       "title": "App Exámenes - Plataforma de Preparación de Exámenes",
