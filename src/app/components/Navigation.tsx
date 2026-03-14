@@ -71,21 +71,21 @@ export function Navigation() {
             <motion.button
               whileHover={{ y: -2 }}
               onClick={() => scrollToSection('projects')}
-              className="font-normal hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
+              className="font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
             >
               {t('nav.projects')}
             </motion.button>
             <motion.button
               whileHover={{ y: -2 }}
               onClick={() => scrollToSection('skills')}
-              className="font-normal hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
+              className="font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
             >
               {t('nav.skills')}
             </motion.button>
             <motion.button
               whileHover={{ y: -2 }}
               onClick={() => scrollToSection('about')}
-              className="font-normal hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
+              className="font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
             >
               {t('nav.about')}
             </motion.button>
@@ -144,13 +144,13 @@ export function Navigation() {
               className="md:hidden py-4 border-t border-gray-100 dark:border-gray-800"
             >
               <div className="flex flex-col gap-4">
-                <button onClick={() => scrollToSection('projects')} className="text-left py-2 font-normal hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300">
+                <button onClick={() => scrollToSection('projects')} className="text-left py-2 font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300">
                   {t('nav.projects')}
                 </button>
-                <button onClick={() => scrollToSection('skills')} className="text-left py-2 font-normal hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300">
+                <button onClick={() => scrollToSection('skills')} className="text-left py-2 font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300">
                   {t('nav.skills')}
                 </button>
-                <button onClick={() => scrollToSection('about')} className="text-left py-2 font-normal hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300">
+                <button onClick={() => scrollToSection('about')} className="text-left py-2 font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300">
                   {t('nav.about')}
                 </button>
                 <button

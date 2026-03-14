@@ -1,7 +1,12 @@
 import { Mail, Linkedin, Send } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
+
+// Inicializar EmailJS con tu Public Key
+// Obtén tu Public Key en: https://dashboard.emailjs.com/admin/account
+emailjs.init('YOUR_PUBLIC_KEY_HERE');
 
 export function Contact() {
   const { t } = useTranslation();
@@ -11,16 +16,37 @@ export function Contact() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // This is a mock submission - in a real project, this would connect to a backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setLoading(true);
+    setError('');
+
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID_HERE',      // Service ID de EmailJS
+        'YOUR_TEMPLATE_ID_HERE',      // Template ID de EmailJS
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'avallejorivera360@gmail.com' // Tu correo
+        }
+      );
+
+      setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    } catch (err) {
+      setError(t('contact.errorMessage') || 'Error al enviar el mensaje');
+      console.error('EmailJS error:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -198,15 +224,30 @@ export function Contact() {
                 />
               </motion.div>
 
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-lg text-sm"
+                >
+                  {error}
+                </motion.div>
+              )}
+
               <motion.button
                 type="submit"
-                disabled={submitted}
-                whileHover={{ scale: submitted ? 1 : 1.02 }}
-                whileTap={{ scale: submitted ? 1 : 0.98 }}
+                disabled={loading || submitted}
+                whileHover={{ scale: (loading || submitted) ? 1 : 1.02 }}
+                whileTap={{ scale: (loading || submitted) ? 1 : 0.98 }}
                 className="w-1/2 mx-auto px-8 py-4 bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors disabled:bg-green-500 dark:disabled:bg-green-600 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {submitted ? (
                   <>{t('contact.successMessage')}</>
+                ) : loading ? (
+                  <>
+                    <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
+                    Enviando...
+                  </>
                 ) : (
                   <>
                     {t('contact.sendButton')}
