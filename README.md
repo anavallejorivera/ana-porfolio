@@ -51,7 +51,7 @@ Este es un portfolio personal profesional creado con tecnologías modernas que i
 
 ### Diseño
 - Interfaz moderna y minimalista
-- Paleta de colores consistente (#c0576f, #470d3b)
+- Paleta de colores consistente (#470d3b,#7e2f56,#c0576f,#e48679,#febd84)
 - Tipografía clara y legible
 - Animaciones suaves con Framer Motion
 
@@ -239,7 +239,7 @@ VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
 
 ## 🤝 Contribuciones
 
-Este es un proyecto personal, pero se aceptan sugerencias y mejoras.
+Este es un proyecto personal, es mi primera vez desarrollando un proyecto completo con React/tailwind por lo que se aceptan sugerencias y mejoras.
 
 ---
 
