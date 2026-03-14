@@ -109,6 +109,44 @@
       "development": "Construido completamente con React usando componentes reutilizables y hooks personalizados. Tailwind CSS proporcionó los estilos utilitarios y aseguró responsive design en todos los dispositivos. Implementé React Router para navegación entre secciones. Usé useState y useEffect para manejar el estado de respuestas y cálculo de resultados. Las preguntas se estructuran en JSON para escalabilidad. Agregué localStorage para persistencia de progreso del usuario entre sesiones.",
       "result": "La aplicación se lanzó exitosamente con 3 asignaturas principales y 15 unidades completas en Programación. Es una herramienta funcional que funciona perfecto en móvil, tablet y desktop. El proyecto demostró conceptos clave: componentización de React, manejo de estado, responsive design con Tailwind, y buenas prácticas de UX. Continúo mejorando la aplicación con nuevas preguntas y features basadas en feedback. Es un logro importante como mi primer proyecto serio con React.",
       "technologies": ["React", "Tailwind CSS", "JavaScript", "Librerías Externas", "Diseño Responsivo"]
+    },
+    "portfolioPersonal": {
+      "title": "Portfolio Personal - Plataforma Profesional",
+      "description": "Un portfolio personal moderno y responsivo creado con React, TypeScript y Tailwind CSS que demuestra habilidades de diseño y desarrollo web con internacionalización.",
+      "overview": "Un portfolio web profesional diseñado para presentar proyectos, habilidades y experiencia como desarrolladora web y diseñadora. El sitio está construido con tecnologías modernas y demuestra conceptos clave como internacionalización, diseño responsivo, animaciones suaves y gestión de formularios con EmailJS. Este proyecto es tanto un portafolio para mostrar trabajo como una demostración de habilidades técnicas en frontend development.",
+      "problem": "Como estudiante y desarrolladora en crecimiento, necesitaba crear una plataforma profesional que: 1) Mostrara mi trabajo y habilidades de forma impactante, 2) Funcionara en múltiples idiomas para alcanzar a más audiencia, 3) Demostrara dominio de tecnologías modernas como React y Tailwind CSS, 4) Permitiera a posibles clientes contactarme directamente.",
+      "goals": [
+        "Crear un diseño visualmente atractivo y profesional que transmita confianza",
+        "Implementar internacionalización completa (español e inglés) con detección automática de idioma",
+        "Demostrar habilidades en React, TypeScript y Tailwind CSS en un proyecto real",
+        "Implementar animaciones suaves con Framer Motion para mejor experiencia",
+        "Integrar EmailJS para recibir mensajes de contacto directamente",
+        "Asegurar responsive design en móvil, tablet y desktop",
+        "Organizar y presentar proyectos con case studies detallados"
+      ],
+      "design": "Comencé con investigación sobre porfolios profesionales modernos. Diseñé en Figma un sistema completo de componentes reutilizables con paleta de colores sofisticada (#c0576f, #470d3b, #febd84). Creé wireframes detallados enfocándome en jerarquía visual, navegación intuitiva y stories claras para cada proyecto. Implementé animaciones estratégicas para mantener el compromiso sin ser excesivo. El diseño prioriza la legibilidad y la accesibilidad.",
+      "development": "Construido completamente con React + TypeScript para type safety. Usé Tailwind CSS para estilos utility y garantizar responsive design. Integré i18next con react-i18next para traducción completa (100+ claves) con detección automática de navegador. Implementé Framer Motion para animaciones de componentes. Usé React Router para navegación SPA. Agregué Context API para manejo de tema (dark/light mode). Integré EmailJS para funcionamiento del formulario de contacto con validación y manejo de errores.",
+      "result": "El portfolio se lanzó exitosamente como un sitio completamente funcional, accesible y profesional. Es responsivo en todos los tamaños de pantalla. Soporta español e inglés con switching de idioma instantáneo. El formulario de contacto envía emails reales a través de EmailJS. Las animaciones mejoran la experiencia sin ralentizar el sitio. El código está bien estructurado, documentado y listo para deployment en Vercel. Este proyecto demuestra competencia en desarrollo web fullstack frontend.",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "i18next", "Framer Motion", "EmailJS", "React Router"]
+    },
+    "losbelgas": {
+      "title": "Los Belgas Atelier - Sitio Web Corporativo",
+      "description": "Un sitio web corporativo para taller de restauración de muebles con galería de proyectos, catálogo de servicios y sistema de talleres interactivos.",
+      "overview": "Un sitio web profesional y atractivo para Los Belgas Atelier, un taller de restauración de muebles ubicado en Zaragoza. El sitio presenta un catálogo completo de servicios, galería extensiva de proyectos restaurados, información sobre talleres disponibles y formulario de contacto para consultas. El diseño enfatiza la artesanía, sostenibilidad y la transformación de muebles antiguos en piezas únicas.",
+      "problem": "Los Belgas Atelier necesitaba una presencia digital profesional que: 1) Mostrara su portafolio de trabajos de restauración de forma visual impactante, 2) Permitiera a clientes interesados conocer sobre sus servicios (restauración, personalización y reparación), 3) Promocionara sus talleres interactivos para atraer nuevos clientes, 4) Facilitara la comunicación directa entre clientes potenciales y el taller.",
+      "goals": [
+        "Crear un diseño que refleje la artesanía y profesionalismo del taller",
+        "Implementar una galería visual atractiva de proyectos de restauración",
+        "Presentar claramente los tres servicios principales (restauración, personalización, reparación)",
+        "Destacar la filosofía sostenible y de calidad del negocio",
+        "Facilitar información y registro para talleres",
+        "Proporcionar múltiples canales de contacto (formulario, teléfono, ubicación)",
+        "Diseño completamente responsivo para mejorar alcance"
+      ],
+      "design": "El diseño se enfocó en destacar la identidad artesanal del taller. Creé una jerarquía visual clara con la galería de proyectos como elemento central. Usé fotografía de alta calidad de muebles restaurados para transmitir calidad y transformación. Implementé secciones claras para servicios, filosofía (Inspirador, Artesanal, Sostenible, Económico) y llamadas a acción para talleres y contacto. El color y la tipografía reflejan modernidad pero respetan la esencia artesanal.",
+      "development": "Construido en WordPress con temas personalizados y plugins de galería. Usé WooCommerce para estructura de catálogo de servicios. Implementé galerías responsivas que muestran los proyectos de restauración. Creé formularios de contacto personalizados y campos para inscripción en talleres. Integré mapas de Google para ubicación del taller. Optimicé velocidad y cargue de imágenes. Agregué integración con redes sociales (Instagram y Facebook) para mostrar trabajo en vivo. Implementé diseño mobile-first para accesibilidad.",
+      "result": "El sitio se lanzó exitosamente presentando más de 50 proyectos de restauración. La galería visual ha aumentado la confianza potencial de clientes. Las consultas de talleres aumentaron significativamente. El sitio es completamente responsive y carga rápido incluso con galería extensa de imágenes. Los clientes reportan facilidad para contactar y conocer los servicios. El sitio sirve como portfolio que valida la calidad y profesionalismo de Los Belgas Atelier.",
+      "technologies": ["WordPress", "WooCommerce", "Galería Responsiva", "Google Maps", "Formularios Personalizado", "Integración Social"]
     }
   },
   "footer": {

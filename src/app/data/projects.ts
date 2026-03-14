@@ -70,22 +70,25 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "los belgas atelier",
-    title: "Página Corporativa de Los Belgas Atelier",
-    description: "Una plataforma de comercio electrónico de moda con filtrado avanzado, funcionalidad de lista de deseos y guías de tallas.",
-    tags: ["Wordpress", "Gutenberg", "Diseño UX"],
+    id: "los-belgas",
+    title: "Los Belgas Atelier - Sitio Web Corporativo",
+    description: "Un sitio web corporativo para taller de restauración de muebles con galería de proyectos, catálogo de servicios y sistema de talleres interactivos.",
+    tags: ["WordPress", "WooCommerce", "Galería de Proyectos"],
     image: "/images/los-belgas/los-belgas.webp",
-    overview: "Un sitio web de comercio electrónico completo para Urban Threads, una marca de moda independiente. El proyecto se enfocó en crear una experiencia de compra excepcional con funciones de filtrado avanzado y personalización.",
-    problem: "Urban Threads estaba vendiendo a través de mercados de terceros y perdiendo identidad de marca. Necesitaban su propia plataforma de comercio electrónico que proporcionara una experiencia de compra premium y mejores márgenes de ganancia.",
+    overview: "Un sitio web profesional y atractivo para Los Belgas Atelier, un taller de restauración de muebles ubicado en Zaragoza. El sitio presenta un catálogo completo de servicios, galería extensiva de proyectos restaurados, información sobre talleres disponibles y formulario de contacto para consultas. El diseño enfatiza el artesanía, sostenibilidad y la transformación de muebles antiguos en piezas únicas.",
+    problem: "Los Belgas Atelier necesitaba una presencia digital profesional que: 1) Mostrara su portafolio de trabajos de restauración de forma visual impactante, 2) Permitiera a clientes interesados conocer sobre sus servicios (restauración, personalización y reparación), 3) Promocionara sus talleres interactivos para atraer nuevos clientes, 4) Facilitara la comunicación directa entre clientes potenciales y el taller.",
     goals: [
-      "Construir una plataforma de comercio electrónico escalable",
-      "Implementar filtrado de productos avanzado y búsqueda",
-      "Crear un proceso de pago intuitivo",
-      "Diseñar para comportamiento de compra móvil primero"
+      "Crear un diseño que refleje la artesanía y profesionalismo del taller",
+      "Implementar una galería visual atractiva de proyectos de restauración",
+      "Presentar claramente los tres servicios principales (restauración, personalización, reparación)",
+      "Destacar la filosofía sostenible y de calidad del negocio",
+      "Facilitar información y registro para talleres",
+      "Proporcionar múltiples canales de contacto (formulario, teléfono, ubicación)",
+      "Diseño completamente responsivo para mejorar alcance"
     ],
-    designProcess: "Investiqué sitios de competidores y mejores prácticas actuales de comercio electrónico. Creé wireframes detallados para viajes de usuario clave incluyendo búsqueda, filtrado y pago. Diseñé una interfaz sofisticada con énfasis en fotografía de productos. Desarrollé un sistema de diseño completo para coherencia en todas las páginas.",
-    development: "Construido en WooCommerce con extensas personalizaciones. Implementé filtrado potenciado por AJAX para navegación sin problemas. Creé plantillas de productos personalizadas con galerías de imágenes y guías de tallas. Integré con proveedores de envío y puertas de enlace de pago. Implementé características de lista de deseos y productos vistos recientemente. Optimicé el flujo de pago para reducir el abandono del carrito.",
-    result: "La tienda se lanzó exitosamente con más de 500 productos. La tasa de conversión alcanzó 3.2%, por encima del promedio de la industria. Las ventas móviles representaron el 65% de los ingresos totales. Los comentarios de los clientes destacaron la navegación fácil y el proceso de pago.",
+    designProcess: "El diseño se enfocó en destacar la identidad artesanal del taller. Creé una jerarquía visual clara con la galería de proyectos como elemento central. Usé fotografía de alta calidad de muebles restaurados para transmitir calidad y transformación. Implementé secciones claras para servicios, filosofía (Inspirador, Artesanal, Sostenible, Económico) y llamadas a acción para talleres y contacto. El color y la tipografía reflejan modernidad pero respetan la esencia artesanal.",
+    development: "Construido en WordPress con temas personalizados y plugins de galería. Usé WooCommerce para estructura de catálogo de servicios. Implementé galerías responsivas que muestran los proyectos de restauración. Creé formularios de contacto personalizados y campos para inscripción en talleres. Integré mapas de Google para ubicación del taller. Optimicé velocidad y cargue de imágenes. Agregué integración con redes sociales (Instagram y Facebook) para mostrar trabajo en vivo. Implementé diseño mobile-first para accesibilidad.",
+    result: "El sitio se lanzó exitosamente presentando más de 50 proyectos de restauración. La galería visual ha aumentado la confianza potencial de clientes. Las consultas de talleres aumentaron significativamente. El sitio es completamente responsive y carga rápido incluso con galería extensa de imágenes. Los clientes reportan facilidad para contactar y conocer los servicios. El sitio sirve como portfolio que valida la calidad y profesionalismo de Los Belgas Atelier.",
     screenshots: [
       "/images/los-belgas/inicio-los-belgas.webp",
     ],
@@ -96,25 +99,23 @@ export const projects: Project[] = [
   {
     id: "portfolio-profesional",
     title: "Portfolio Personal",
-    description: "Un sitio web de portafolio para una agencia creativa que muestra su trabajo de diseño y testimonios de clientes.",
-    tags: ["Diseño UI", "Figma", "React", "Diseño Responsivo", "Github"],
+    description: "Un portfolio personal moderno y responsivo creado con React, TypeScript y Tailwind CSS que demuestra habilidades de diseño y desarrollo web con internacionalización.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "i18next", "Framer Motion", "EmailJS"],
     image: "/images/portfolio/portfolio.webp",
-    overview: "Un sitio web de portafolio visualmente impresionante para Colectivo Creativo, una agencia de diseño boutique. El sitio presenta escaparates de proyectos animados, perfiles de miembros del equipo y una sección de servicios interactiva.",
-    problem: "El sitio web anterior de la agencia no mostraba efectivamente su trabajo creativo. Necesitaban un sitio moderno y orientado visualmente que impresionara a clientes potenciales y ganara nuevos negocios.",
-    problemImages: [
-      "/images/portfolio/old-portfolio.webp",
-      "/images/portfolio/old-portfolio1.webp",
-      
-    ],
+    overview: "Un portfolio web profesional diseñado para presentar proyectos, habilidades y experiencia como desarrolladora web y diseñadora. El sitio está construido con tecnologías modernas y demuestra conceptos clave como internacionalización, diseño responsivo, animaciones suaves y gestión de formularios con EmailJS. Este proyecto es tanto un portafolio para mostrar trabajo como una demostración de habilidades técnicas en fronted development.",
+    problem: "Como estudiante y desarrolladora en crecimiento, necesitaba crear una plataforma profesional que: 1) Mostrara mi trabajo y habilidades de forma impactante, 2) Funcionara en múltiples idiomas para alcanzar a más audiencia, 3) Demostrara dominio de tecnologías modernas como React y Tailwind CSS, 4) Permitiera a posibles clientes contactarme directamente.",
     goals: [
-      "Crear una primera impresión audaz y memorable",
-      "Mostrar proyectos con animaciones atractivas",
-      "Contar la historia y valores de la agencia",
-      "Generar clientes potenciales de calidad a través de CTAs estratégicas"
+      "Crear un diseño visualmente atractivo y profesional que transmita confianza",
+      "Implementar internacionalización completa (español e inglés) con detección automática de idioma",
+      "Demostrar habilidades en React, TypeScript y Tailwind CSS en un proyecto real",
+      "Implementar animaciones suaves con Framer Motion para mejor experiencia",
+      "Integrar EmailJS para recibir mensajes de contacto directamente",
+      "Asegurar responsive design en móvil, tablet y desktop",
+      "Organizar y presentar proyectos con case studies detallados"
     ],
-    designProcess: "Exploré varias opciones de diseño enfocándose en jerarquía visual y narración de historias. Creé mockups de alta fidelidad en Figma con cuidadosa atención a sistemas de cuadrícula y tipografía. Diseñé animaciones personalizadas e interacciones microinteractivas para mejorar el compromiso del usuario. Usé una paleta de colores sofisticada con combinaciones de colores inesperadas.",
-    development: "Construido con HTML5 semántico y técnicas CSS modernas incluyendo Grid y Propiedades Personalizadas. Implementé animaciones suaves de desplazamiento usando API de Intersection Observer. Creé una arquitectura JavaScript modular para componentes interactivos. Optimicé el rendimiento con carga perezosa para imágenes y videos.",
-    result: "El sitio web ganó un premio de diseño local y generó una atención significativa de la industria. La agencia reportó un aumento de 3x en consultas de calidad. La tasa de rebote disminuyó un 45% con usuarios pasando un promedio de 4 minutos en el sitio.",
+    designProcess: "Comencé con investigación sobre porfolios profesionales modernos. Diseñé en Figma un sistema completo de componentes reutilizables con paleta de colores sofisticada (#c0576f, #470d3b, #febd84). Creé wireframes detallados enfocándome en jerarquía visual, navegación intuitiva y stories claras para cada proyecto. Implementé animaciones estratégicas para mantener el compromiso sin ser excesivo. El diseño prioriza la legibilidad y la accesibilidad.",
+    development: "Construido completamente con React + TypeScript para type safety. Usé Tailwind CSS para estilos utility y garantizar responsive design. Integré i18next con react-i18next para traducción completa (100+ claves) con detección automática de navegador. Implementé Framer Motion para animaciones de componentes. Usé React Router para navegación SPA. Agregué Context API para manejo de tema (dark/light mode). Integré EmailJS para funcionamiento del formulario de contacto con validación y manejo de errores.",
+    result: "El portfolio se lanzó exitosamente como un sitio completamente funcional, accesible y profesional. Es responsivo en todos los tamaños de pantalla. Soporta español e inglés con switching de idioma instantáneo. El formaulario de contacto envía emails reales a través de EmailJS. Las animaciones mejoran la experiencia sin ralentizar el sitio. El código está bien estructurado, documentado y listo para deployment en Vercel. Este proyecto demuestra competencia en desarrollo web fullstack frontend.",
     screenshots: [
       "/images/portfolio/dark-portfolio.webp",
       "/images/portfolio/skills-portfolio.webp"

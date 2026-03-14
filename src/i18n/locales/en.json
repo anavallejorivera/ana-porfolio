@@ -109,6 +109,44 @@
       "development": "Built entirely with React using reusable components and custom hooks. Tailwind CSS provided utility styles and ensured responsive design across all devices. Implemented React Router for navigation between sections. Used useState and useEffect to manage the state of answers and result calculations. Questions are structured in JSON for scalability. Added localStorage for persistence of user progress between sessions.",
       "result": "The application successfully launched with 3 main subjects and 15 complete units in Programming. It's a functional tool that works perfectly on mobile, tablet, and desktop. The project demonstrated key concepts: React componentization, state management, responsive design with Tailwind, and good UX practices. I continue improving the application with new questions and features based on feedback. It's an important achievement as my first serious React project.",
       "technologies": ["React", "Tailwind CSS", "JavaScript", "External Libraries", "Responsive Design"]
+    },
+    "portfolioPersonal": {
+      "title": "Personal Portfolio - Professional Platform",
+      "description": "A professional web portfolio designed to showcase projects, skills, and experience. A comprehensive digital presence that demonstrates full-stack development capabilities with modern technologies, internationalization, and professional design.",
+      "overview": "A personal portfolio web platform built to present my projects, technical skills, and professional experience. This is my digital business card - a responsive, accessible, and visually appealing website that showcases my work as a developer. The portfolio serves as both a showcase of past projects and a practical demonstration of my ability to build modern, scalable web applications.",
+      "problem": "As a growing student and developer, I needed to create a professional platform that demonstrates my skills to potential clients and employers. This portfolio needed to: 1) Showcase completed projects with detailed case studies, 2) Support multiple languages for international clients, 3) Provide a reliable way for clients to contact me, 4) Demonstrate proficiency with modern web technologies, and 5) Be fully responsive and accessible across all devices.",
+      "goals": [
+        "Create a visually attractive and modern design that reflects professional standards",
+        "Implement complete internationalization (Spanish/English) with auto-detection",
+        "Showcase React, TypeScript, and Tailwind CSS expertise with clean, maintainable code",
+        "Integrate smooth animations and transitions for enhanced user experience",
+        "Implement functional email integration for reliable client communication",
+        "Ensure full responsiveness and accessibility across all devices and screen sizes",
+        "Create detailed case studies for each project with comprehensive documentation"
+      ],
+      "design": "The design was created in Figma with a modern, minimalist approach. I established a consistent color palette with primary, secondary, and accent colors that work in both light and dark modes. The layout follows a hero section pattern with smooth scrolling navigation. Each section (projects, skills, about, contact) is clearly labeled and easy to navigate. I designed the case study template to beautifully present project details with image galleries, problem statements, goals, and results. The design prioritizes readability and maintains consistent spacing and typography throughout.",
+      "development": "Built with React and TypeScript for type safety and scalable architecture. Tailwind CSS provides utility-first styling with built-in dark mode support. i18next handles internationalization with browser language detection and localStorage persistence for language preferences. Framer Motion adds subtle animations for enhanced UX. React Router manages navigation between pages. The contact form integrates EmailJS for reliable email delivery. Context API manages global state (theme and language). All data is structured in JSON for easy maintenance. The build is optimized with Vite for lightning-fast development and production performance.",
+      "result": "A fully functional, production-ready portfolio website that successfully presents my professional work. The site is live, responsive on all devices, supports multiple languages, and provides a reliable way for clients to contact me. It serves as a practical demonstration of my ability to build modern web applications with best practices in code organization, UX design, and accessibility. The portfolio has already helped me connect with potential clients and represents a significant professional asset in my career as a developer.",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "i18next", "Framer Motion", "EmailJS", "React Router"]
+    },
+    "losbelgas": {
+      "title": "Los Belgas Atelier - Corporate Website",
+      "description": "A corporate website for a furniture restoration workshop with project gallery, service catalog, and interactive workshop system.",
+      "overview": "A professional and attractive website for Los Belgas Atelier, a furniture restoration workshop located in Zaragoza. The site presents a complete catalog of services, an extensive gallery of restored projects, information about available workshops, and contact form for inquiries. The design emphasizes craftsmanship, sustainability, and the transformation of old furniture into unique pieces.",
+      "problem": "Los Belgas Atelier needed a professional digital presence that: 1) Showcased their restoration work portfolio in a visually impactful way, 2) Allowed interested clients to learn about their services (restoration, customization, and repair), 3) Promoted their interactive workshops to attract new customers, 4) Facilitated direct communication between potential clients and the workshop.",
+      "goals": [
+        "Create a design that reflects the craftsmanship and professionalism of the workshop",
+        "Implement an attractive visual gallery of restoration projects",
+        "Clearly present the three main services (restoration, customization, repair)",
+        "Highlight the sustainable and quality philosophy of the business",
+        "Facilitate information and registration for workshops",
+        "Provide multiple contact channels (form, phone, location)",
+        "Completely responsive design to improve reach"
+      ],
+      "design": "The design focused on highlighting the workshop's artisanal identity. I created a clear visual hierarchy with the project gallery as the central element. I used high-quality photography of restored furniture to convey quality and transformation. I implemented clear sections for services, philosophy (Inspiring, Artisanal, Sustainable, Economic) and calls-to-action for workshops and contact. The color and typography reflect modernity while respecting the artisanal essence.",
+      "development": "Built in WordPress with custom themes and gallery plugins. I used WooCommerce for service catalog structure. Implemented responsive galleries showcasing restoration projects. Created custom contact forms and fields for workshop registration. Integrated Google Maps for workshop location. Optimized speed and image loading. Added social media integration (Instagram and Facebook) to showcase live work. Implemented mobile-first design for accessibility.",
+      "result": "The site launched successfully presenting over 50 restoration projects. The visual gallery has increased potential client confidence. Workshop inquiries increased significantly. The site is fully responsive and loads fast even with an extensive image gallery. Clients report ease in contacting and learning about services. The site serves as a portfolio that validates the quality and professionalism of Los Belgas Atelier.",
+      "technologies": ["WordPress", "WooCommerce", "Responsive Gallery", "Google Maps", "Custom Forms", "Social Integration"]
     }
   },
   "footer": {
