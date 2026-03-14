@@ -33,6 +33,7 @@ export function CaseStudy() {
             src={project.image} 
             alt={project.title}
             className="w-full h-full object-cover"
+            loading="lazy" // ✅ Lazy loading
           />
         </div>
       </div>
@@ -88,6 +89,7 @@ export function CaseStudy() {
                     src={image} 
                     alt={`Problem illustration ${index + 1}`}
                     className="w-full h-full object-cover"
+                    loading="lazy" // ✅ Lazy loading
                   />
                 </div>
               ))}
@@ -158,6 +160,7 @@ export function CaseStudy() {
                       src={gallery.image} 
                       alt={`${project.title} screenshot ${index + 1}`}
                       className="w-full h-full object-cover"
+                      loading="lazy" // ✅ Lazy loading
                     />
                   </div>
                 </div>
@@ -186,6 +189,7 @@ export function CaseStudy() {
                       src={media.src} 
                       alt={`${project.title} screenshot ${index + 1}`}
                       className="w-full h-full object-cover"
+                      loading="lazy" // ✅ Lazy loading
                     />
                   )}
                 </div>
@@ -207,6 +211,7 @@ export function CaseStudy() {
                     src={screenshot} 
                     alt={`${project.title} screenshot ${index + 1}`}
                     className="w-full h-full object-cover"
+                    loading="lazy" // ✅ Lazy loading
                   />
                 </div>
               ))}

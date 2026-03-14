@@ -27,18 +27,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const applyTheme = (dark: boolean) => {
     const html = document.documentElement;
-    const body = document.body;
     
     if (dark) {
+      // ✅ Only use classes, let Tailwind handle styling
       html.classList.add('dark');
-      html.style.backgroundColor = '#0f0f0f';
-      body.style.backgroundColor = '#0f0f0f';
-      body.style.color = '#ffffff';
     } else {
       html.classList.remove('dark');
-      html.style.backgroundColor = '#ffffff';
-      body.style.backgroundColor = '#ffffff';
-      body.style.color = '#000000';
     }
   };
 

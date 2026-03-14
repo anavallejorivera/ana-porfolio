@@ -42,6 +42,7 @@ export function Projects() {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
+                    loading="lazy" // ✅ Lazy loading
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.6, ease: 'easeOut' }}
                   />

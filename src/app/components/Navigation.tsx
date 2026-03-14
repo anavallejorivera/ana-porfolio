@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -12,7 +12,7 @@ export function Navigation() {
   const { isDark, toggleTheme } = useTheme();
   const { t } = useTranslation();
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     if (location.pathname === '/') {
       // Si estamos en home, scroll directo
       const element = document.getElementById(sectionId);
@@ -24,19 +24,20 @@ export function Navigation() {
       window.location.href = `/#${sectionId}`;
     }
     setIsOpen(false);
-  };
+  }, [location.pathname]); // ✅ useCallback para evitar recreación innecesaria
 
-  // Handle hash-based navigation on page load
+  // Handle hash-based navigation on page load using requestAnimationFrame
   useEffect(() => {
     const handleHashNavigation = () => {
       const hash = window.location.hash.slice(1);
       if (hash) {
-        setTimeout(() => {
+        // ✅ requestAnimationFrame es más eficiente que setTimeout
+        requestAnimationFrame(() => {
           const element = document.getElementById(hash);
           if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
           }
-        }, 100);
+        });
       }
     };
 
@@ -57,6 +58,7 @@ export function Navigation() {
           <button 
             onClick={() => scrollToSection('hero')}
             className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+            aria-label="Navigate to home"
           >
             <img 
               src="/logo-ana.webp" 
@@ -72,6 +74,7 @@ export function Navigation() {
               whileHover={{ y: -2 }}
               onClick={() => scrollToSection('projects')}
               className="font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
+              aria-label="Projects section"
             >
               {t('nav.projects')}
             </motion.button>
@@ -79,6 +82,7 @@ export function Navigation() {
               whileHover={{ y: -2 }}
               onClick={() => scrollToSection('skills')}
               className="font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
+              aria-label="Skills section"
             >
               {t('nav.skills')}
             </motion.button>
@@ -86,6 +90,7 @@ export function Navigation() {
               whileHover={{ y: -2 }}
               onClick={() => scrollToSection('about')}
               className="font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors"
+              aria-label="About section"
             >
               {t('nav.about')}
             </motion.button>
@@ -94,6 +99,7 @@ export function Navigation() {
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('contact')}
               className="px-6 py-2.5 bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors"
+              aria-label="Contact section"
             >
               {t('nav.contact')}
             </motion.button>
@@ -144,18 +150,31 @@ export function Navigation() {
               className="md:hidden py-4 border-t border-gray-100 dark:border-gray-800"
             >
               <div className="flex flex-col gap-4">
-                <button onClick={() => scrollToSection('projects')} className="text-left py-2 font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300">
+                <button 
+                  onClick={() => scrollToSection('projects')} 
+                  className="text-left py-2 font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300"
+                  aria-label="Projects section"
+                >
                   {t('nav.projects')}
                 </button>
-                <button onClick={() => scrollToSection('skills')} className="text-left py-2 font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300">
+                <button 
+                  onClick={() => scrollToSection('skills')} 
+                  className="text-left py-2 font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300"
+                  aria-label="Skills section"
+                >
                   {t('nav.skills')}
                 </button>
-                <button onClick={() => scrollToSection('about')} className="text-left py-2 font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300">
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="text-left py-2 font-normal whitespace-nowrap hover:text-[#c0576f] dark:hover:text-[#e48679] transition-colors dark:text-gray-300"
+                  aria-label="About section"
+                >
                   {t('nav.about')}
                 </button>
                 <button
                   onClick={() => scrollToSection('contact')}
                   className="w-1/2 mx-auto px-4 py-1.5 text-sm bg-[#c0576f] dark:bg-[#e48679] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors text-center"
+                  aria-label="Contact section"
                 >
                   {t('nav.contact')}
                 </button>

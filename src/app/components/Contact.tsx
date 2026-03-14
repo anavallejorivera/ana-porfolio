@@ -1,11 +1,28 @@
 import { Mail, Linkedin, Send } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 
-// Inicializar EmailJS 
-emailjs.init('ZnIiHhd-bcyttvd9S');
+// ✅ Inicializar EmailJS con variable de entorno
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+// ✅ Validar formato de email
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+// ✅ Validar formulario completo - retorna key de traducción
+const validateForm = (data: { name: string; email: string; message: string }): string | null => {
+  if (!data.name.trim()) return 'contact.validation.nameRequired';
+  if (data.name.trim().length < 2) return 'contact.validation.nameMinLength';
+  if (!data.email.trim()) return 'contact.validation.emailRequired';
+  if (!validateEmail(data.email)) return 'contact.validation.emailInvalid';
+  if (!data.message.trim()) return 'contact.validation.messageRequired';
+  if (data.message.trim().length < 10) return 'contact.validation.messageMinLength';
+  return null;
+};
 
 export function Contact() {
   const { t } = useTranslation();
@@ -17,13 +34,22 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [lastSubmitTime, setLastSubmitTime] = useState(0); // ✅ Rate limiting
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validación de campos
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setError('Por favor completa todos los campos');
+
+    // ✅ Rate limiting (evita spam)
+    const now = Date.now();
+    if (now - lastSubmitTime < 2000) {
+      setError(t('contact.validation.rateLimitError'));
+      return;
+    }
+
+    // ✅ Validación mejorada - ahora retorna keys de traducción
+    const validationErrorKey = validateForm(formData);
+    if (validationErrorKey) {
+      setError(t(validationErrorKey));
       return;
     }
 
@@ -31,45 +57,51 @@ export function Contact() {
     setError('');
 
     try {
-      console.log('Enviando mensaje con datos:', {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: 'avallejorivera360@gmail.com'
-      });
+      // ✅ Solo log en desarrollo
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Enviando formulario de contacto...');
+      }
 
       const response = await emailjs.send(
-        'service_idpj4y7',
-        'template_prfwcbm',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
-          to_email: 'avallejorivera360@gmail.com'
+          to_email: import.meta.env.VITE_EMAIL_RECIPIENT // ✅ Variable de entorno
         }
       );
 
-      console.log('Respuesta de EmailJS:', response);
+      if (response.status === 200) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setLastSubmitTime(now);
 
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 3000);
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 3000);
+      }
     } catch (err: any) {
-      console.error('Error completo:', err);
       const errorMessage = err?.text || err?.message || 'Error al enviar el mensaje';
       setError(`Error: ${errorMessage}`);
+      
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error de envío:', err);
+      }
     } finally {
       setLoading(false);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    // ✅ Limpiar error al escribir
+    if (error) setError('');
   };
 
   return (
@@ -244,7 +276,7 @@ export function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-lg text-sm"
+                  className="p-4 bg-white dark:bg-white text-[#c0576f] dark:text-[#c0576f] rounded-lg text-sm border border-[#c0576f] dark:border-[#c0576f]"
                 >
                   {error}
                 </motion.div>
@@ -262,7 +294,7 @@ export function Contact() {
                 ) : loading ? (
                   <>
                     <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
-                    Enviando...
+                    {t('contact.sending')}
                   </>
                 ) : (
                   <>

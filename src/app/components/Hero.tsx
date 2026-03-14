@@ -1,24 +1,26 @@
 import { ArrowRight, Download } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
+import { useCallback } from 'react';
 
 export function Hero() {
   const { t } = useTranslation();
-  const scrollToProjects = () => {
+
+  // ✅ useCallback para evitar re-renders innecesarios
+  const scrollToProjects = useCallback(() => {
     const element = document.getElementById('projects');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
 
-  const downloadCV = () => {
+  // ✅ Simplificado: sin manipulación DOM innecesaria
+  const downloadCV = useCallback(() => {
     const link = document.createElement('a');
     link.href = '/CV-Ana-vallejo-Completo-IT.pdf';
     link.download = 'CV-Ana-Vallejo.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+    link.click(); // No necesita appendChild en navegadores modernos
+  }, []);
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-6 lg:px-8 pt-40 relative">
@@ -36,6 +38,7 @@ export function Hero() {
                 src="/images/me-cartoon.webp"
                 alt="Ana Vallejo - Desarrolladora Web"
                 className="w-full h-full rounded-full object-cover shadow-2xl"
+                loading="lazy" // ✅ Lazy loading
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               />

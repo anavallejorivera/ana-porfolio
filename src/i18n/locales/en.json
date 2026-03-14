@@ -72,8 +72,18 @@
     "messagePlaceholder": "Tell me about your project...",
     "sendButton": "Send Message",
     "successMessage": "Message Sent!",
+    "sending": "Sending...",
     "email": "Email",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMinLength": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters",
+      "rateLimitError": "Please wait 2 seconds before sending another message"
+    }
   },
   "caseStudy": {
     "backButton": "Back to Projects",
