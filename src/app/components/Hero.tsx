@@ -17,7 +17,7 @@ export function Hero() {
   // ✅ Simplificado: sin manipulación DOM innecesaria
   const downloadCV = useCallback(() => {
     const link = document.createElement('a');
-    link.href = '/CV - Ana-vallejo-Completo-IT.pdf';
+    link.href = '/CV-Ana-vallejo-Completo-IT.pdf';
     link.download = 'CV-Ana-Vallejo.pdf';
     link.click(); // No necesita appendChild en navegadores modernos
   }, []);
