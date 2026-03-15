@@ -110,6 +110,10 @@ export const projects: Project[] = [
     image: "/images/portfolio/portfolio.webp",
     overview: "Un portfolio web profesional diseñado para presentar proyectos, habilidades y experiencia como desarrolladora web y diseñadora. El sitio está construido con tecnologías modernas y demuestra conceptos clave como internacionalización, diseño responsivo, animaciones suaves y gestión de formularios con EmailJS. Este proyecto es tanto un portafolio para mostrar trabajo como una demostración de habilidades técnicas en fronted development.",
     problem: "Como estudiante y desarrolladora en crecimiento, necesitaba crear una plataforma profesional que: 1) Mostrara mi trabajo y habilidades de forma impactante, 2) Funcionara en múltiples idiomas para alcanzar a más audiencia, 3) Demostrara dominio de tecnologías modernas como React y Tailwind CSS, 4) Permitiera a posibles clientes contactarme directamente.",
+    problemImages: [
+      "/images/portfolio/old-portfolio.webp",
+      "/images/portfolio/old-portfolio1.webp"
+    ],
     goals: [
       "Crear un diseño visualmente atractivo y profesional que transmita confianza",
       "Implementar internacionalización completa (español e inglés) con detección automática de idioma",

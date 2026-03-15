@@ -5,7 +5,7 @@
 
 Portfolio profesional interactivo de **Ana Vallejo Rivera**, desarrolladora web y diseñadora UI/UX. Este sitio web es una plataforma moderna para presentar proyectos, habilidades y experiencia en desarrollo web fullstack.
 
-**Sitio en vivo:** [ana-portfolio.vercel.app](https://ana-portfolio.vercel.app) (próximamente)
+**Sitio en vivo:** [ana-portfolio.vercel.app](https://anavallejorivera.com) (próximamente)
 
 ---
 
