@@ -16,7 +16,7 @@ export function Hero() {
 
   const downloadCV = useCallback(() => {
     const link = document.createElement('a');
-    link.href = '/CV-Ana-vallejo-Completo-IT.pdf';
+    link.href = '/CV-Ana-vallejo-IT.pdf';
     link.download = 'CV-Ana-Vallejo.pdf';
     link.click(); 
   }, []);
@@ -113,7 +113,7 @@ export function Hero() {
               onClick={downloadCV}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-1/2 mx-auto px-8 py-4 bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors inline-flex items-center justify-center gap-2"
+              className="w-1/2 mx-auto px-8 py-4 bg-[#c0576f] dark:bg-[#e48679] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors inline-flex items-center justify-center gap-2"
             >
               {t('hero.downloadCV')}
               <motion.div

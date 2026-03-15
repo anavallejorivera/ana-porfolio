@@ -152,7 +152,7 @@ export function Contact() {
                 </motion.div>
                 <div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">{t('contact.email')}</div>
-                  <div className="group-hover:text-[#c0576f] transition-colors dark:text-gray-200 dark:group-hover:text-[#c0576f]">
+                  <div className="group-hover:text-[#c0576f] transition-colors dark:text-[#e48679] dark:group-hover:text-[#e48679]">
                     avallejorivera360@gmail.com
                   </div>
                 </div>
@@ -177,7 +177,7 @@ export function Contact() {
                 </motion.div>
                 <div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">{t('contact.linkedin')}</div>
-                  <div className="group-hover:text-[#c0576f] transition-colors dark:text-gray-200 dark:group-hover:text-[#c0576f]">
+                  <div className="group-hover:text-[#c0576f] transition-colors dark:text-[#e48679] dark:group-hover:text-[#e48679]">
                     linkedin.com/in/anavallejorivera-developer
                   </div>
                 </div>
@@ -287,7 +287,7 @@ export function Contact() {
                 disabled={loading || submitted}
                 whileHover={{ scale: (loading || submitted) ? 1 : 1.02 }}
                 whileTap={{ scale: (loading || submitted) ? 1 : 0.98 }}
-                className="w-1/2 mx-auto px-8 py-4 bg-[#c0576f] dark:bg-[#febd84] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors disabled:bg-green-500 dark:disabled:bg-green-600 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-1/2 mx-auto px-8 py-4 bg-[#c0576f] dark:bg-[#e48679] text-white dark:text-[#470d3b] rounded-lg hover:bg-[#7e2f56] dark:hover:bg-[#c0576f] transition-colors disabled:bg-green-500 dark:disabled:bg-green-600 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {submitted ? (
                   <>{t('contact.successMessage')}</>
