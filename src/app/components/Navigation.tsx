@@ -14,7 +14,7 @@ export function Navigation() {
 
   const scrollToSection = useCallback((sectionId: string) => {
     if (location.pathname === '/') {
-      // Si estamos en home, scroll directo
+      // Si estamos en home -> scroll directo
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -24,14 +24,14 @@ export function Navigation() {
       window.location.href = `/#${sectionId}`;
     }
     setIsOpen(false);
-  }, [location.pathname]); // ✅ useCallback para evitar recreación innecesaria
+  }, [location.pathname]); //useCallback para evitar recreación innecesaria
 
   // Handle hash-based navigation on page load using requestAnimationFrame
   useEffect(() => {
     const handleHashNavigation = () => {
       const hash = window.location.hash.slice(1);
       if (hash) {
-        // ✅ requestAnimationFrame es más eficiente que setTimeout
+        //requestAnimationFrame es más eficiente que setTimeout
         requestAnimationFrame(() => {
           const element = document.getElementById(hash);
           if (element) {
@@ -61,9 +61,9 @@ export function Navigation() {
             aria-label="Navigate to home"
           >
             <img 
-              src="/logo-ana.webp" 
+              src="/logo-ana-vallejo.webp" 
               alt="Ana Vallejo" 
-              className="w-16 h-16 "
+              className="w-26 h-20"
             />
             {/* <span className="text-sm font-normal tracking-tight hover:text-[#c0576f] dark:hover:text-[#febd84] transition-colors">Ana Vallejo Rivera</span> */}
           </button>
