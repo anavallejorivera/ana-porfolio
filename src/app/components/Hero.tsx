@@ -94,7 +94,7 @@ export function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-[#c0576f] dark:text-[#e48679] hover:bg-[#c0576f] dark:hover:bg-[#e48679] hover:text-white transition-all"
+              className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-[#c0576f] dark:text-[#e48679] hover:bg-[#c0576f] hover:text-white dark:hover:bg-[#e48679] dark:hover:text-gray-900 transition-all"
             >
               <Linkedin size={24} />
             </motion.a>
@@ -104,7 +104,7 @@ export function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-[#c0576f] dark:text-[#e48679] hover:bg-[#c0576f] dark:hover:bg-[#e48679] hover:text-white transition-all"
+              className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-[#c0576f] dark:text-[#e48679] hover:bg-[#c0576f] hover:text-white dark:hover:bg-[#e48679] dark:hover:text-gray-900 transition-all"
             >
               <Github size={24} />
             </motion.a>
