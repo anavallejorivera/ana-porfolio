@@ -2,12 +2,19 @@ import { Outlet, useLocation } from 'react-router';
 import { Navigation } from './components/Navigation';
 import { AnimatedBackground } from './components/AnimatedBackground';
 import { ThemeProvider } from './context/ThemeContext';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export function Layout() {
   const location = useLocation();
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
+    // Ignorar el primer render para permitir que la página cargue desde el Hero
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
       if (element) {
