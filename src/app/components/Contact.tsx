@@ -38,6 +38,13 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // ✅ Logs de debug mantenidos para facilitar troubleshooting en caso de futuros errores
+    // Permite monitorear: datos del formulario, claves de configuración y flujo de envío
+    console.log('📝 Formulario enviado - Datos:', formData);
+    console.log('🔑 Public Key:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    console.log('📧 Service ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log('📋 Template ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
 
     // ✅ Rate limiting (evita spam)
     const now = Date.now();
@@ -49,6 +56,7 @@ export function Contact() {
     // ✅ Validación mejorada - ahora retorna keys de traducción
     const validationErrorKey = validateForm(formData);
     if (validationErrorKey) {
+      console.warn('❌ Validación fallida:', validationErrorKey);
       setError(t(validationErrorKey));
       return;
     }
@@ -57,6 +65,7 @@ export function Contact() {
     setError('');
 
     try {
+      console.log('⏳ Iniciando envío...');
       // ✅ Solo log en desarrollo
       if (process.env.NODE_ENV === 'development') {
         console.log('Enviando formulario de contacto...');
@@ -73,7 +82,10 @@ export function Contact() {
         }
       );
 
+      console.log('✅ Respuesta de EmailJS:', response);
+
       if (response.status === 200) {
+        console.log('🎉 Mensaje enviado exitosamente');
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
         setLastSubmitTime(now);
@@ -81,13 +93,17 @@ export function Contact() {
         setTimeout(() => {
           setSubmitted(false);
         }, 3000);
+      } else {
+        console.warn('⚠️ Respuesta inesperada:', response.status);
+        setError(`Error: No se pudo enviar el mensaje (${response.status})`);
       }
     } catch (err: any) {
+      console.error('🚨 Error de envío:', err);
       const errorMessage = err?.text || err?.message || 'Error al enviar el mensaje';
       setError(`Error: ${errorMessage}`);
       
       if (process.env.NODE_ENV === 'development') {
-        console.error('Error de envío:', err);
+        console.error('Detalles del error:', err);
       }
     } finally {
       setLoading(false);
