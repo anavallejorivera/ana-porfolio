@@ -5,6 +5,9 @@ import { useTranslation } from 'react-i18next';
 export function WorkProcess() {
   const { t } = useTranslation();
   
+  // Colores para los iconos, alternando entre colores del proyecto
+  const iconColors = ['#c0576f', '#febd84', '#e48679', '#7e2f56', '#470d3b'];
+  
   const processSteps = [
     {
       icon: Search,
@@ -59,6 +62,7 @@ export function WorkProcess() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 auto-rows-fr">
             {processSteps.map((step, index) => {
               const Icon = step.icon;
+              const iconColor = iconColors[index % iconColors.length];
               return (
                 <motion.div
                   key={step.titleKey}
@@ -78,14 +82,16 @@ export function WorkProcess() {
                   />
 
                   <motion.div
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
-                    className="flex flex-col h-full bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-xl  hover:bg-white dark:hover:bg-gray-700 dark:hover:shadow-2xl transition-all duration-300"
+                    className="flex flex-col h-full bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-xl hover:bg-white dark:hover:bg-gray-700 dark:hover:shadow-2xl transition-all duration-300"
                   >
                     <div className="flex md:flex-col items-start md:items-center gap-4 md:gap-6 h-full">
                       <motion.div
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.6 }}
-                        className="p-4 bg-[#c0576f] text-white rounded-xl shrink-0"
+                        className="p-4 text-white rounded-xl shrink-0"
+                        style={{ backgroundColor: iconColor }}
                       >
                         <Icon size={24} />
                       </motion.div>
