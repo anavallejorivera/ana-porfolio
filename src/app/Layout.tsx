@@ -1,9 +1,23 @@
-import { Outlet } from 'react-router';
+import { Outlet, useLocation } from 'react-router';
 import { Navigation } from './components/Navigation';
 import { AnimatedBackground } from './components/AnimatedBackground';
 import { ThemeProvider } from './context/ThemeContext';
+import { useEffect } from 'react';
 
 export function Layout() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <ThemeProvider>
       {/* Skip to main content link for accessibility */}

@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from 'react-router';
+import { useParams, Link, Navigate, useNavigate } from 'react-router';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
@@ -8,14 +8,12 @@ import { Footer } from '../components/Footer';
 export function CaseStudy() {
   const { projectId } = useParams();
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const project = projects.find(p => p.id === projectId);
 
   const scrollToProjects = useCallback(() => {
-    const element = document.getElementById('projects');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
+    navigate('/#projects');
+  }, [navigate]);
 
   if (!project) {
     return <Navigate to="/" replace />;
