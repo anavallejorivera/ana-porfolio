@@ -6,10 +6,19 @@ interface HighlightConfig {
 }
 
 /**
- * Resalta términos específicos en un texto usando un span con clases Tailwind
+ * Colores del proyecto para resaltar, rotando entre ellos
+ */
+const highlightColors = [
+  'bg-[#c0576f] dark:bg-[#e48679] text-white dark:text-[#470d3b]',
+  'bg-[#febd84] text-[#470d3b]',
+  'bg-[#e48679] dark:bg-[#c0576f] text-white dark:text-white',
+];
+
+/**
+ * Resalta términos específicos en un texto alternando colores del proyecto
  * @param text - El texto a procesar
  * @param highlightTerms - Array de términos a resaltar
- * @returns JSX con los términos resaltados
+ * @returns JSX con los términos resaltados usando colores del proyecto
  */
 export function highlightText({ text, highlightTerms }: HighlightConfig): React.ReactNode {
   if (!highlightTerms.length) return text;
@@ -20,12 +29,15 @@ export function highlightText({ text, highlightTerms }: HighlightConfig): React.
   const pattern = new RegExp(`(${sortedTerms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
 
   const parts = text.split(pattern);
+  let colorIndex = 0;
 
   return parts.map((part, index) => {
-    // Si el parte matchea con uno de los términos a resaltar, devolver un span resaltado
+    // Si el parte matchea con uno de los términos a resaltar, devolver un span con color alterno
     if (highlightTerms.some(term => term.toLowerCase() === part.toLowerCase())) {
+      const color = highlightColors[colorIndex % highlightColors.length];
+      colorIndex++;
       return (
-        <span key={index} className="bg-yellow-200 dark:bg-yellow-400 dark:text-gray-900 font-semibold px-1 rounded">
+        <span key={index} className={`${color} font-semibold px-1 rounded`}>
           {part}
         </span>
       );
