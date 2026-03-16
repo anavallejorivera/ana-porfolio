@@ -38,6 +38,12 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // 🔍 LOGS PARA DIAGNOSTICAR EN VERCEL
+    console.log('📝 Formulario enviado');
+    console.log('🔑 Public Key:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    console.log('📧 Service ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log('📋 Template ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
 
     // ✅ Rate limiting (evita spam)
     const now = Date.now();
