@@ -12,6 +12,10 @@ export function Layout() {
     // Ignorar el primer render para permitir que la página cargue desde el Hero
     if (isInitialMount.current) {
       isInitialMount.current = false;
+      // Limpiar el hash de la URL al cargar la página para evitar scroll automático
+      if (location.hash) {
+        window.history.replaceState({}, '', window.location.pathname);
+      }
       return;
     }
 

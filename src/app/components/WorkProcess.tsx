@@ -80,7 +80,7 @@ export function WorkProcess() {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
-                    className="flex flex-col h-full bg-[#101828] dark:bg-[#101828] rounded-xl p-6 shadow-sm hover:shadow-xl hover:bg-[#1a2332] dark:hover:bg-[#1a2332] dark:hover:shadow-2xl transition-all duration-300"
+                    className="flex flex-col h-full bg-gray-50 dark:bg-[#101828] rounded-xl p-6 shadow-sm hover:shadow-xl hover:bg-white dark:hover:bg-[#1a2332] dark:hover:shadow-2xl transition-all duration-300"
                   >
                     <div className="flex md:flex-col items-start md:items-center gap-4 md:gap-6 h-full">
                       <motion.div
