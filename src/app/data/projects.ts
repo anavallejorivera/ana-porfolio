@@ -69,7 +69,7 @@ export const projects: Project[] = [
     development: "Construido con HTML5, CSS3 y JavaScript vanilla para máxima compatibilidad y rendimiento. Implementé un sitio web estático y responsivo que muestra el catálogo de productos de la tienda física. Diseño de galería de productos con imágenes de alta calidad. Integración de Google Maps para mostrar ubicación exacta de la tienda. Formularios de contacto con validación para llevar inquietudes. Secciones informativas con horarios de atención y ubicación. Integración con redes sociales. Optimización de velocidad y SEO para mejor visibilidad en buscadores.",
     result: "El sitio se lanzó exitosamente presentando el catálogo digital completo de la mercería. La nueva identidad visual modernizó la marca significativamente. Los usuarios reportan facilidad para encontrar productos gracias al sistema de filtrado, incluso antes de visitar la tienda. El sitio es completamente responsive y funciona perfectamente en móviles. Las consultas de contacto aumentaron al poder los clientes preguntar sobre productos específicos. El mapa de ubicación ha mejorado la capacidad de los clientes para encontrar la tienda física. El proyecto demuestra habilidad en desarrollo frontend con JavaScript vanilla, diseño responsivo e integración con servicios de ubicación.",
     screenshots: [
-       "/images/merceria/inicio-1.webp",
+      "/images/merceria/inicio-1.webp",
       "/images/merceria/inicio.webp",
       "/images/merceria/destacados-merceria.webp",
       "/images/merceria/contacto.webp"

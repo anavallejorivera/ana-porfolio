@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Linkedin, Github } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
@@ -80,6 +80,35 @@ export function Hero() {
           >
             {t('hero.description')}
           </motion.p>
+
+          {/* Social Icons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="flex justify-center gap-6 pt-4"
+          >
+            <motion.a
+              href="https://www.linkedin.com/in/anavallejorivera-developer"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-[#c0576f] dark:text-[#e48679] hover:bg-[#c0576f] dark:hover:bg-[#e48679] hover:text-white transition-all"
+            >
+              <Linkedin size={24} />
+            </motion.a>
+            <motion.a
+              href="https://github.com/anavallejorivera"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-[#c0576f] dark:text-[#e48679] hover:bg-[#c0576f] dark:hover:bg-[#e48679] hover:text-white transition-all"
+            >
+              <Github size={24} />
+            </motion.a>
+          </motion.div>
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
